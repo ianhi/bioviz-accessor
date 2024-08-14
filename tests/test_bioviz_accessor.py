@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import bioviz_accessor  # noqa: F401
 import pytest
 import xarray as xr
 from dask.base import tokenize
