@@ -67,7 +67,9 @@ The interpolation of the final physical coordinates is not quite right, it leave
 
 
 ### Example
-```
+You can access the object on any `DataArray` via the `bviz` attribute. which will be available so long as you have run `import bioviz_accessor`.
+
+```python
 import xarray as xr
 import bioviz_accessor
 from bioviz_accessor.example_data import generate_fake_overlap_data
