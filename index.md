@@ -1,11 +1,5 @@
+
 # bioviz_accessor's Documentation
-
-[![License](https://img.shields.io/pypi/l/bioviz_accessor.svg?color=green)](https://github.com/ianhi/bioviz_accessor/raw/main/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/bioviz_accessor.svg?color=green)](https://pypi.org/project/bioviz_accessor)
-[![Python Version](https://img.shields.io/pypi/pyversions/bioviz_accessor.svg?color=green)](https://python.org)
-[![CI](https://github.com/ianhi/bioviz_accessor/actions/workflows/ci.yml/badge.svg)](https://github.com/ianhi/bioviz_accessor/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/ianhi/bioviz_accessor/branch/main/graph/badge.svg)](https://codecov.io/gh/ianhi/bioviz_accessor)
-
 
 This repo provides an `xarray` [Accessor](https://docs.xarray.dev/en/stable/internals/extending-xarray.html) that helps with some biological vizualization task when using `xarray` when you data from a multidimensional acquisition stored in `xarray`.
 
@@ -15,18 +9,11 @@ pip install bioviz_accessor
 ```
 
 
-optionally if you want the fake data functionality
-
-```bash
-pip install bioviz_access[fake]
-``
-
-
 ## Image Stitching
 
 When you are runing a microscopy experiment it can be helpful to compose all a large image containing all the fields of view. This package leverages `xarray`'s coords with `scikit-image` functions to provide a convientent stitching method that work even with overlapping images to create a large stitched image.
 
-### Dims and Coords requirements
+## Dims and Coords requirements
 
 ### Dims
 
@@ -80,9 +67,3 @@ data.bviz.stitched(T=0, C=1, Z=1).plot.imshow()
 which gives this image:
 
 ![stitched image](imgs/stitched.png)
-
-
-
-## Hyperslicing
-
-This package also makes it easy to use [`mpl-interactions.hyperslicer`](https://mpl-interactions.readthedocs.io/en/stable/examples/hyperslicer.html) by providing the `bviz.hypersliced()` function.

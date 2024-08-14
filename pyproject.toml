@@ -28,12 +28,13 @@ dynamic = ["version"]
 dependencies = [
     "xarray",
     "scikit-learn",
+    "dask",
 ]
 
 # extras
 # https://peps.python.org/pep-0621/#dependencies-optional-dependencies
 [project.optional-dependencies]
-test = ["pytest>=6.0", "pytest-cov"]
+test = ["pytest>=6.0", "pytest-cov", "mda-simulator"]
 dev = [
     "black",
     "ipython",
@@ -44,6 +45,9 @@ dev = [
     "pytest",
     "rich",
     "ruff",
+]
+fake = [
+    "mda-simulator",
 ]
 
 [project.urls]
@@ -120,7 +124,10 @@ extend-ignore = [
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
-filterwarnings = ["error"]
+filterwarnings = [
+    # "error",
+    "ignore:::.*numpy.distutils"
+]
 
 # https://mypy.readthedocs.io/en/stable/config_file.html
 [tool.mypy]

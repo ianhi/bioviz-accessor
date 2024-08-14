@@ -9,3 +9,5 @@ except PackageNotFoundError:
 
 __author__ = "Ian Hunt-Isaak"
 __email__ = "ianhuntisaak@gmail.com"
+
+from ._accessor import BioVizAccessor  # noqa: F401
