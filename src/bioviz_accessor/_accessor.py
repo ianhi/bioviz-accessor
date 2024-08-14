@@ -36,7 +36,6 @@ class BioVizAccessor:
             raise TypeError("*max_cache* must be an int")
         self._max_cache = value
         while self._max_cache < len(self._stitched_cache):
-            print("here?")
             self._stitched_cache.pop(next(iter(self._stitched_cache)))
 
     def _validate_coords(self, name: str, value: int | None) -> int:
