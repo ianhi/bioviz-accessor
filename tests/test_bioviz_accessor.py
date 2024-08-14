@@ -17,14 +17,14 @@ def test_output_consistency():
     data.bviz.stitched(T=0, C=0, Z=0)
     # check that we have exactly the same stitched data
     assert (
-        tokenize(data.bviz.stitched(T=0, C=0, Z=0))
-        == "119c2d9ab450201fe918ec9ce8d5a3ce"
+        tokenize(data.bviz.stitched(T=0, C=0, Z=0), ensure_deterministic=True)
+        == "b26999951835478633c2eb5594245104"
     )
 
     # this should be different!
     assert (
-        tokenize(data.bviz.stitched(T=1, C=0, Z=0))
-        != "119c2d9ab450201fe918ec9ce8d5a3ce"
+        tokenize(data.bviz.stitched(T=1, C=0, Z=0), ensure_deterministic=True)
+        != "b26999951835478633c2eb5594245104"
     )
 
 
