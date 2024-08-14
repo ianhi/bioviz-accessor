@@ -23,7 +23,7 @@ class BioVizAccessor:
             raise ValueError("Non-square images are not yet supported")
         self._micron_to_pixel = (self._arr.shape[-1] / self._FOV_micron).values
         self._max_cache = 5
-        self._token = tokenize(self._arr, ensure_deterministic=True)
+        self._token = None
         self._stitched_cache: dict[str, xr.DataArray] = {}
 
     @property
@@ -84,14 +84,14 @@ class BioVizAccessor:
 
         # we can't use something like LRU_cache here because we also need to check
         # the state of the underlying data which may have changed in the interim
-        if self._token == tokenize(self._arr):
+        if self._token == tokenize(self._arr.data, ensure_determinisitic=True):
             # underlying array hasn't changed.
             # check if we've computed for these coords before
             if cache_key in self._stitched_cache:
                 return self._stitched_cache[cache_key]
         else:
             self._stitched_cache = {}
-            self._token = tokenize(self._arr, ensure_determinisitic=True)
+            self._token = tokenize(self._arr.data, ensure_determinisitic=True)
 
         data = self._arr.sel(T=T, C=C, Z=Z)
         X_values = data.coords["Sx"] + data.coords["X"]

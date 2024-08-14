@@ -14,21 +14,23 @@ def test_underspecified_coords():
 
 
 def test_output_consistency():
-    data.bviz.stitched(T=0, C=0, Z=0)
     # check that we have exactly the same stitched data
     assert (
-        tokenize(data.bviz.stitched(T=0, C=0, Z=0), ensure_deterministic=True)
-        == "b26999951835478633c2eb5594245104"
+        tokenize(data.bviz.stitched(T=0, C=0, Z=0).data, ensure_deterministic=True)
+        == "82edf77404fcaee27b750c6cbbeae0c0"
     )
+    print(data.bviz._stitched_cache)
 
     # this should be different!
     assert (
-        tokenize(data.bviz.stitched(T=1, C=0, Z=0), ensure_deterministic=True)
-        != "b26999951835478633c2eb5594245104"
+        tokenize(data.bviz.stitched(T=1, C=0, Z=0).data, ensure_deterministic=True)
+        != "82edf77404fcaee27b750c6cbbeae0c0"
     )
+    print(data.bviz._stitched_cache)
 
 
 def test_cache():
+    print(data.bviz._stitched_cache)
     assert len(data.bviz._stitched_cache) == 2
     data.bviz.max_cache = 2
     data.bviz.stitched(T=1, C=1, Z=0)
