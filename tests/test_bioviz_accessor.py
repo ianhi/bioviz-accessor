@@ -25,11 +25,9 @@ def test_output_consistency():
         joblib.hash(data.bviz.stitched(T=1, C=0, Z=0).data)
         != "82edf77404fcaee27b750c6cbbeae0c0"
     )
-    print(data.bviz._stitched_cache)
 
 
 def test_cache():
-    print(data.bviz._stitched_cache)
     assert len(data.bviz._stitched_cache) == 2
     data.bviz.max_cache = 2
     data.bviz.stitched(T=1, C=1, Z=0)
@@ -46,11 +44,3 @@ def test_smoke_hyperslicer():
     # rely on `mpl-interactions` tests
     # and just check that nothing breaks
     data.bviz.hypersliced()
-
-
-# holding off this until an update in mda-simulator
-# that will allow us to set the rng seed
-# def test_generate_data():
-# todo...
-# call gen data
-# check the tokenization
