@@ -1,13 +1,10 @@
 # bioviz_accessor's Documentation
 
-[![License](https://img.shields.io/pypi/l/bioviz-accessor.svg?color=green)](https://github.com/ianhi/bioviz_accessor/blob/main/LICENSE)
-<!-- [![PyPI](https://img.shields.io/pypi/v/bioviz-accessor.svg?color=green)](https://pypi.org/project/bioviz_accessor) -->
-[![Python Version](https://img.shields.io/pypi/pyversions/bioviz_accessor.svg?color=green)](https://python.org)
-[![Test](https://github.com/ianhi/bioviz-accessor/actions/workflows/ci.yml/badge.svg)](https://github.com/ianhi/bioviz_accessor/actions/workflows/ci.yml)
-
-[![codecov](https://codecov.io/gh/ianhi/bioviz-accessor/branch/main/graph/badge.svg)](https://codecov.io/gh/ianhi/bioviz_accessor)
+[![License](https://img.shields.io/pypi/l/mpl-interactions.svg?color=green)](https://github.com/ianhi/bioviz-accessor/blob/main/LICENSE) [![Test](https://github.com/ianhi/bioviz-accessor/actions/workflows/ci.yml/badge.svg)](https://github.com/ianhi/bioviz_accessor/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/ianhi/bioviz-accessor/branch/main/graph/badge.svg)](https://codecov.io/gh/ianhi/bioviz_accessor)
 
 
+ <!-- [![PyPI](https://img.shields.io/pypi/v/bioviz-accessor.svg?color=green)](https://pypi.org/project/bioviz_accessor) -->
+<!-- [![Python Version](https://img.shields.io/pypi/pyversions/bioviz_accessor.svg?color=green)](https://python.org) -->
 This repo provides an `xarray` [Accessor](https://docs.xarray.dev/en/stable/internals/extending-xarray.html) that helps with some biological vizualization task when using `xarray` when you data from a multidimensional acquisition stored in `xarray`.
 
 ## Install
