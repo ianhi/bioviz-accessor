@@ -19,7 +19,7 @@ optionally if you want the fake data functionality
 
 ```bash
 pip install bioviz_access[fake]
-``
+```
 
 
 ## Image Stitching
