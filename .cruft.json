@@ -1,0 +1,21 @@
+{
+  "template": "https://github.com/ianhi/pyrepo-cookiecutter",
+  "commit": "525a213d5a01700ac67b06e050e6ca37dd7e99e0",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "full_name": "Ian Hunt-Isaak",
+      "email": "ianhuntisaak@gmail.com",
+      "github_username": "ianhi",
+      "project_name": "bioviz_accessor",
+      "project_slug": "bioviz_accessor",
+      "project_short_description": "Accessor for biology viz with xarray",
+      "pypi_username": "ianhi",
+      "_copy_without_render": [
+        ".github/workflows/*"
+      ],
+      "_template": "https://github.com/ianhi/pyrepo-cookiecutter"
+    }
+  },
+  "directory": null
+}
