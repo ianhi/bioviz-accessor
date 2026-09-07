@@ -1,9 +1,10 @@
 from pathlib import Path
 
-import bioviz_accessor  # noqa: F401
 import joblib
 import pytest
 import xarray as xr
+
+import bioviz_accessor  # noqa: F401
 
 data = xr.load_dataarray(Path(__file__).parent / "test_data.zarr", engine="zarr")
 
